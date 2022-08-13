@@ -8,7 +8,9 @@
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/app.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -30,7 +32,7 @@
             <span>Fork me on github</span>
         </div>
 
-        
+
         <section class="section">
             <div class="generated-link-counter"><span id="count"></span>&nbsp;liens déjà générés avec l'outil</div>
             <!-- <div class="btn-section-group">
@@ -54,8 +56,15 @@
             <div id="short-link-result"></div>
         </section>
 
-        <section class="section">
-            <spans>Top 5 des liens les plus cliqués</spans>
+        <a href="#top" class="arrow-container animated fadeInDown">
+            <div class="arrow-2">
+                <i class="fa fa-angle-down"></i>
+            </div>
+            <div class="arrow-1 animated hinge infinite zoomIn"></div>
+        </a>
+
+        <section class="section" id="top">
+            <spans class="section-title">Top 5 des liens les plus cliqués</spans>
             <div id="top-link"></div>
         </section>
 
