@@ -1,0 +1,167 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+body {
+    margin: 0;
+}
+
+svg { 
+    width: 100%;
+    position: fixed;
+}
+
+.form {
+    width: 70%;
+}
+
+.form .form-group {
+    margin: 10px 0;
+    z-index: 999;
+}
+
+.btn-section-group {
+    display: flex;
+    margin-bottom: 10px;
+    width: 334px;
+}
+
+.btn-menu {
+    background: white;
+    cursor: pointer;
+}
+
+.btn-menu.active {
+    background: rgb(169, 211, 248);
+    color: white;
+}
+
+.btn-section-group .btn-menu:first-child {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: none;
+    box-shadow: 0 0 10px #F2F2F2;
+    padding: 20px;
+    font-size: 0.8rem;
+    z-index: 1000;
+    flex: 1;
+}
+
+.btn-section-group .btn-menu:last-child {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;border: none;
+    box-shadow: 0 0 10px #F2F2F2;
+    padding: 20px;
+    font-size: 0.8rem;
+    flex: 1;
+    z-index: 1000;
+}
+
+input {
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #F2F2F2;
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    background: white;
+    z-index: 1000;
+}
+
+input:focus {
+    outline: none;
+}
+
+button#btn-submit {
+    border: none;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    padding: 20px 40px; 
+    margin: 20px 0;
+}
+
+button#btn-submit:hover {
+    cursor: pointer;
+    background: #F2F2F2;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.section form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#short-link-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wave {
+    animation: wave 8s linear infinite;
+}
+
+.wave1 {
+    animation: wave1 10s linear infinite;
+}
+
+.wave2 {
+    animation: wave2 12s linear infinite;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes wave1 {
+    0% {
+        transform: scaleY(1.2) translateX(0%);
+    }
+
+    100% {
+        transform: scaleY(1.2) translateX(100%);
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        transform: scaleY(.8) translateX(0%);
+    }
+
+    100% {
+        transform: scaleY(.8) translateX(100%);
+    }
+}
+
+footer {
+    background: #323039;
+    color: #F2F2F2F2;
+}
+
+.author {
+    text-align: center;
+    font-size: 0.8rem;
+    padding-top: 30px;
+}
+
+.build {
+    text-align: center;
+    font-size: 0.8rem;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
