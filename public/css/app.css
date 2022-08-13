@@ -64,13 +64,50 @@ input {
     border-radius: 30px;
     box-shadow: 0 0 10px #F2F2F2;
     padding: 20px 40px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background: white;
     z-index: 1000;
 }
 
 input:focus {
     outline: none;
+}
+
+button {
+    transition: 0.1s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+button::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+button:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
 }
 
 button#btn-submit {
@@ -170,24 +207,6 @@ footer {
     padding-bottom: 30px;
 }
 
-.github {
-    position: fixed;
-    right: -60px;
-    top: 40px;
-    transform: rotate(45deg);
-    background: #24292f;
-    font-size: 0.8rem;
-    padding: 10px 50px;
-}
-
-.github:hover {
-    cursor: pointer;
-}
-
-.github span {
-    color: white;
-}
-
 .generated-link-counter {
     font-size: 0.8rem;
 }
@@ -270,48 +289,49 @@ footer {
     text-align: center;
     color: #006064;
   }
-  
-  /* Custom Animate.css */
-  
-  .animated.hinge {
-    -webkit-animation-duration: 2s;
-            animation-duration: 2s;
-            animation-iteration-count: infinite;
+
+  .top-link-a {
+    z-index: 1000;
   }
-  
-  @-webkit-keyframes zoomIn {
-    0% {
-      opacity: 0;
-      -webkit-transform: scale3d(.4, .4, .4);
-              transform: scale3d(.4, .4, .4);
-    }
-  
-    50% {
-      opacity: 0.5;
-    }
-    
-    100% {
-      opacity: 0;
-    }
+
+  .random-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  
-  @keyframes zoomIn {
-    0% {
-      opacity: 0;
-      -webkit-transform: scale3d(.4, .4, .4);
-              transform: scale3d(.4, .4, .4);
-    }
-  
-    50% {
-      opacity: 0.5;
-    }
-    
-    100% {
-      opacity: 0;
-    }
+
+  .random-container-title {
+    font-weight: bold;
+    font-size: .8rem;
+    position: relative;
+    text-align: center;
+    z-index: 1000;
+    margin-bottom: 40px;
   }
-  
-  .zoomIn {
-    -webkit-animation-name: zoomIn;
-            animation-name: zoomIn;
+
+  .random-container-title::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: rgba(173, 216, 230, 0.386);
+    transform: rotate3d(10, 10, 10, 2deg);
+    left: -20px;
+    z-index: 999;
+    top: -20px;
+  }
+
+  .random-container-button {
+    border: none;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    padding: 20px 40px; 
+    margin: auto;
+  }
+
+  .random-container-button:hover {
+    cursor: pointer;
   }

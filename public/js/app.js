@@ -10,8 +10,6 @@ const createLink = (e) => {
 
     const maximum_click = document.getElementById('urlmaximumclick').value;
 
-    // const password = document.getElementById('urlpassword').value;
-
     e.target.setAttribute('disabled', true);
 
     let body = `{ "link": "${link}`;
@@ -102,14 +100,31 @@ const getTopLink = () => {
                 topElement.appendChild(div);
             }
 
-            // count.innerText = json.count;
+        })
+        .catch(err => console.error('error:' + err));
+}
+
+const getRandomLink = () => {
+
+    let options = {
+        method: 'GET'
+    };
+
+    fetch(`${base}/get-random`, options)
+        .then(res => res.json())
+        .then(json => {
+
+            if (json.link) {
+                const link = (json.link.indexOf('://') === -1) ? 'http://' + json.link : json.link;
+                window.open(link, '_blank');
+            }
 
         })
         .catch(err => console.error('error:' + err));
 }
 
 const btnSubmit = document.getElementById('btn-submit').addEventListener('click', createLink);
-// handleChangeSection();
+const randomBtn = document.getElementById('generate-random-link').addEventListener('click', getRandomLink);
+
 getCountShorterLink();
 getTopLink();
-document.getElementById('github').addEventListener('click', () => { window.open("https://github.com/Jonathan64340/url-shorter", "_blank") })
