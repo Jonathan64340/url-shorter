@@ -110,10 +110,6 @@ class UrlController extends AppController {
 
                             resolve(result)
 
-                        } else {
-
-                            reject()
-
                         }
 
                     } else {
@@ -300,12 +296,25 @@ class UrlController extends AppController {
 
     getRandom() {
         this.connection.query(
-            `SELECT DISTINCT link FROM url ORDER BY RAND() LIMIT 1`,
+            `SELECT DISTINCT * FROM url ORDER BY RAND() LIMIT 1`,
             (error, result) => {
                 if (error) this.response.send(error);
 
                 if (result) {
-                    this.getShortLink({ link: result[0]['short-link'] });
+
+                    const payload = {
+                        ...result[0],
+                        click: result[0].click + 1
+                    }
+
+                    this.updateShorterLink(payload)
+                        .then(() => {
+                            this.getShortLink({ link: result[0]['short-link'] })
+                            .then((link) => {
+                                this.response.send(link[0]);
+                            });
+                        })
+                        .catch(() => this.response.send('Error'));
                 }
 
             }
